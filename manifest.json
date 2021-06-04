@@ -2,18 +2,18 @@
     "name": "Video speed",
     "version": "1.0",
     "description": "Let's you change the speed of any video.",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "icons":{
         "128": "/assets/icons/icon_128.png"
     },
-    "browser_action": {
+    "action": {
         "default_icon": "/assets/icons/icon.png",
         "default_popup": "index.html"
     },
-    "permissions": ["activeTab", "tabs", "https://*/", "http://*/"],
+    "permissions": ["scripting", "tabs", "storage"],
+    "host_permissions": ["https://*/*", "http://*/*"],
     "background": {
-        "page": "background.html",
-        "persistent": false
+        "service_worker": "serviceworker.js"
     }
 
 }
